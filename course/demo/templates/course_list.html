@@ -1,0 +1,14 @@
+<form method="GET">
+    <input type="text" name="q" placeholder="ชื่อวิชา" value="{{ q }}">
+    <button type="submit">ค้นหา</button>
+</form>
+
+
+{% if courses %}
+    <table border="1">
+        <tr><th>รหัสวิชา</th><th>ชื่อวิชา</th><th>หน่วยกิต</th></tr>
+        {% for c in courses %}
+        <tr><td>{{ c.course_code }}</td><td>{{ c.course_name }}</td><td>{{ c.credits }}</td></tr>
+        {% endfor %}
+    </table>
+{% endif %}

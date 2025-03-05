@@ -25,6 +25,7 @@ SECRET_KEY = "django-insecure-$sp7f0%0ttki1d(%tf)=a2m@_4#!56smlepz=%c=qqpx2&t-2d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+import os
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'demo'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = "course.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
